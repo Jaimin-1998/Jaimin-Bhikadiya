@@ -17,6 +17,24 @@ class _ProfileEditState extends State<ProfileEdit> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController cityController = TextEditingController();
+  bool isSwitched = true;
+  var textValue = 'Switch is ON';
+
+  void toggleSwitch(bool value) {
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+        textValue = 'Switch Button is ON';
+      });
+      print('Switch Button is ON');
+    } else {
+      setState(() {
+        isSwitched = false;
+        textValue = 'Switch Button is OFF';
+      });
+      print('Switch Button is OFF');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +135,32 @@ class _ProfileEditState extends State<ProfileEdit> {
                     color: AppThemes.clrGray,
                   )),
             ),
+
+            Padding(
+              padding: EdgeInsets.only(right: 20, left: 20, bottom: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    AppString.strNotificationSettingsOffOn,
+                    style: TextStyle(
+                        color: AppThemes.clrBlack,
+                        fontSize: AppFonts.size_medium),
+                  ),
+                  Transform.scale(
+                      scale: 2,
+                      child: Switch(
+                        onChanged: toggleSwitch,
+                        value: isSwitched,
+                        activeColor: AppThemes.greenColor,
+                        activeTrackColor: Colors.grey[100],
+                        inactiveThumbColor: Colors.grey[200],
+                        inactiveTrackColor: Colors.grey[100],
+                      )),
+                ],
+              ),
+            ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ButtonWidget(

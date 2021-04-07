@@ -58,7 +58,7 @@ Widget AppBarWidget(BuildContext context,String title,bool iconFilter){
 
 Widget AppBarWidget1(BuildContext context,String title,bool iconFilter){
   return   Container(
-    height: MediaQuery.of(context).size.width * 0.40,
+    height: MediaQuery.of(context).size.width * 0.70,
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
         color: AppThemes.clrPrimary,
