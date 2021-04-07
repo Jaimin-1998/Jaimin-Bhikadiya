@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:krasscars_2/constants/constants.dart';
 import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
@@ -36,8 +35,13 @@ class _SignUpState extends State<SignUp> {
                     inputTextField(usernameController, validateName,
                         AppString.strUserName, TextInputType.text, null, false,
                         prefixIcon: Image.asset(AllImages.icon_user)),
-                    inputTextField(emailController, validateEmail, AppString.strEmail,
-                        TextInputType.emailAddress, null, false,
+                    inputTextField(
+                        emailController,
+                        validateEmail,
+                        AppString.strEmail,
+                        TextInputType.emailAddress,
+                        null,
+                        false,
                         prefixIcon: Image.asset(AllImages.ic_email)),
                     inputTextField(passwordController, validatePassword,
                         AppString.strPassword, TextInputType.text, null, true,
@@ -72,9 +76,10 @@ class _SignUpState extends State<SignUp> {
                         },
                         text: Text(
                           AppString.strregister,
-                          style: GoogleFonts.getFont('Open Sans',
+                          style: TextStyle(
                               fontSize: AppFonts.size_medium_large_extra,
-                              color: AppThemes.clrWhite,fontWeight: FontWeight.bold),
+                              color: AppThemes.clrWhite,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
@@ -88,10 +93,11 @@ class _SignUpState extends State<SignUp> {
                         onPressed: () {
                           // return Navigator.push(context,
                           //   MaterialPageRoute(builder: (context) => Login()));
-                          },
+                        },
                         text: Text(
                           AppString.strLogin,
-                          style: TextStyle(  color: AppThemes.clrBlack,
+                          style: TextStyle(
+                              color: AppThemes.clrBlack,
                               fontSize: AppFonts.size_medium_large_extra,
                               fontFamily: AppFonts.PoppinsRegular),
                         ),

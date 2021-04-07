@@ -13,6 +13,7 @@ class AppThemes {
   static const Color clrPrimary = Color(0xFFF0EB16);
   static const Color clrLightBlack= Color(0xFF152843);
   static const Color clrHint= Color(0xFFF5F7F9);
+  static const Color clrDarkRed = Color(0xffF25D37);
 
 
 

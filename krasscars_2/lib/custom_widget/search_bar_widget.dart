@@ -6,7 +6,7 @@ Widget searchBar(TextEditingController controller, String hintText) {
   return Align(
     alignment: Alignment.bottomCenter,
     child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 30),
+      margin: EdgeInsets.symmetric(horizontal: 35),
       height: 67,
       child: TextFormField(
         style: TextStyle(color: AppThemes.clrBlack),

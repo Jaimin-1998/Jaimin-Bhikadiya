@@ -40,7 +40,6 @@ dependencies:
   smooth_star_rating: 1.1.1
   multi_image_picker:
   hidden_drawer_menu: 2.0.1
-  google_fonts: 1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -85,5 +84,22 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Poppins-Bold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+    - family: Poppins-Light
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+    - family: Poppins-Regular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+    - family: Open-Sans-Bold
+      fonts:
+        - asset: assets/fonts/Open-Sans-Bold.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

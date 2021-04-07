@@ -4,15 +4,15 @@ import 'package:flutter/widgets.dart';
 import 'package:hidden_drawer_menu/controllers/simple_hidden_drawer_controller.dart';
 import 'package:krasscars_2/constants/constants.dart';
 
-Widget AppBarWidget(BuildContext context,String title){
+Widget AppBarWidget(BuildContext context,String title,bool iconFilter){
   return   Container(
-    height: MediaQuery.of(context).size.width * 0.55,
+    height: MediaQuery.of(context).size.width * 0.35,
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
         color: AppThemes.clrPrimary,
         borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(40),
-            bottomRight: Radius.circular(40))),
+            bottomLeft: Radius.circular(45),
+            bottomRight: Radius.circular(45))),
     child: Padding(
       padding: const EdgeInsets.fromLTRB(20, 50, 20, 10),
       child: Stack(
@@ -21,8 +21,8 @@ Widget AppBarWidget(BuildContext context,String title){
             alignment: Alignment.topLeft,
             child: GestureDetector(
               onTap: (){
-              //  Navigator.pop(context);
-                SimpleHiddenDrawerController.of(context).toggle();
+                Navigator.pop(context);
+              // SimpleHiddenDrawerController.of(context).toggle();
 
               },
               child: Padding(
@@ -41,6 +41,67 @@ Widget AppBarWidget(BuildContext context,String title){
                   fontSize: AppFonts.size_triple_extra_large),
             ),
           ),
+          iconFilter==true?  Align(
+            alignment: Alignment.topRight,
+            child: GestureDetector(
+              onTap: (){
+              },
+              child: Image.asset(AllImages.ic_filter),
+            ),
+          ):Container(),
+        ],
+      ),
+    ),
+
+  );
+}
+
+Widget AppBarWidget1(BuildContext context,String title,bool iconFilter){
+  return   Container(
+    height: MediaQuery.of(context).size.width * 0.40,
+    width: MediaQuery.of(context).size.width,
+    decoration: BoxDecoration(
+        color: AppThemes.clrPrimary,
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(45),
+            bottomRight: Radius.circular(45))),
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(20, 50, 20, 10),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+                // SimpleHiddenDrawerController.of(context).toggle();
+
+              },
+              child: Padding(
+                padding: EdgeInsets.only(top: 7,bottom: 8,right: 8),
+                child: Image.asset(AllImages.ic_backButton),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              title,
+              style: TextStyle(
+                  color: AppThemes.clrBlack,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: AppFonts.PoppinsSemiBold,
+                  fontSize: AppFonts.size_triple_extra_large),
+            ),
+          ),
+          iconFilter==true?  Align(
+            alignment: Alignment.topRight,
+            child: GestureDetector(
+              onTap: (){
+              },
+              child: Image.asset(AllImages.ic_filter),
+            ),
+          ):Container(),
         ],
       ),
     ),

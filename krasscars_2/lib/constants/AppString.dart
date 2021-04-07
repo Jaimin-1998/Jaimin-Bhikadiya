@@ -138,4 +138,8 @@ class AppString {
   static const String strName = 'Name';
   static const String strPhone = 'Phone';
   static const String strMessage = 'Message';
+  static const String strConfirm = 'Confirm';
+  static const String strCancel = 'Cancel';
+  static const String strOk = 'Ok';
+  static const String strPleaseAddCode = 'Please Add Code';
 }

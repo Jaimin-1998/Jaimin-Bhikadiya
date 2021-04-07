@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:krasscars_2/constants/constants.dart';
 import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
 import 'package:krasscars_2/helper/validate.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
                           ),
                         )),
                     SizedBox(
-                      height: 100,
+                      height: 50,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -98,7 +98,40 @@ class _LoginState extends State<Login> {
                               height: 1,
                               width: double.infinity / 4)),
                     ]),
-                    SizedBox(height: 40),
+                    SizedBox(height: 60),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20, left: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Card(
+                            elevation: 5,
+                            child: Container(
+                              height:  MediaQuery.of(context).size.width * 0.15,
+                              width: MediaQuery.of(context).size.width * 0.20,
+                              child: Image.asset(AllImages.ic_phone_black),
+                            ),
+                          ),
+                          Card(
+                            elevation: 5,
+                            child: Container(
+                              height:  MediaQuery.of(context).size.width * 0.15,
+                              width: MediaQuery.of(context).size.width * 0.20,
+                              child: Image.asset(AllImages.google_icon_black),
+                            ),
+                          ),
+                          Card(
+                            elevation: 5,
+                            child: Container(
+                              height:  MediaQuery.of(context).size.width * 0.15,
+                              width: MediaQuery.of(context).size.width * 0.20,
+                              child: Image.asset(AllImages.ic_apple_black),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 30),
                     Container(
                       padding:  EdgeInsets.symmetric(horizontal: 20),
                       child: ButtonWidget(

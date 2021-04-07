@@ -45,10 +45,10 @@ Widget inputTextField(
 }
 
 Widget textField(
-    BuildContext context, TextEditingController controller, String hintText) {
+    BuildContext context, TextEditingController controller, String hintText, double width) {
   return Container(
     alignment: Alignment.center,
-    width: MediaQuery.of(context).size.width,
+    width: width,
     //  height: 60.0,
     child: TextField(
       controller: controller,

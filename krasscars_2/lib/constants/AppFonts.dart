@@ -14,5 +14,6 @@ class AppFonts {
   static const String PoppinsLight = "poppins-Light";
   static const String PoppinsRegular = "poppins-Regular";
   static const String PoppinsSemiBold = "poppins-SemiBold";
+  static const String OpenSans = "Open-Sans-Bold";
 }
 

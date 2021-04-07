@@ -52,4 +52,10 @@ class AllImages {
   static const String img_app_logo = '$baseUrl/img_app_logo.jpg';
   static const String ic_home = '$baseUrl/ic_home.png';
 
+  static const String ic_apple_black = '$baseUrl/icon-apple_black.png';
+  static const String ic_phone_black = '$baseUrl/icon-phone_black.png';
+  static const String google_icon_black = '$baseUrl/google-icon_black.png';
+  static const String ic_filter = '$baseUrl/ic_filter.png';
+  static const String ic_phone = '$baseUrl/ic_phone.png';
+  static const String img_userProfile = '$baseUrl/imageUser.png';
 }
