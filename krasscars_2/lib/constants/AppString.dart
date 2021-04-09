@@ -142,4 +142,14 @@ class AppString {
   static const String strCancel = 'Cancel';
   static const String strOk = 'Ok';
   static const String strPleaseAddCode = 'Please Add Code';
+
+  static const String strSearchBrand = 'Search Brand';
+  static const String strFilterAndSort = 'Filter And Sort';
+  static const String strAddCar = 'Add Car';
+  static const String strAddNewCar = 'Add New Car';
+  static const String strCarPhotos = 'Car Photos';
+  static const String strNickNames = 'Nick Name';
+  static const String strManufacturers = 'Manufacturers';
+  static const String strEngine = 'Engine';
+  static const String strColor = 'Color';
 }

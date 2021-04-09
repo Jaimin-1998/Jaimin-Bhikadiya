@@ -58,4 +58,22 @@ class AllImages {
   static const String ic_filter = '$baseUrl/ic_filter.png';
   static const String ic_phone = '$baseUrl/ic_phone.png';
   static const String img_userProfile = '$baseUrl/imageUser.png';
+
+
+  static const String img_user_profile1 = '$baseUrl/img_user_profile.png';
+  static const String ic_my_garage = '$baseUrl/ic_my_garage.png';
+  static const String ic_logo1 = '$baseUrl/ic_logo1.png';
+  static const String ic_logo2 = '$baseUrl/ic_logo2.png';
+  static const String ic_logo3 = '$baseUrl/ic_logo3.png';
+  static const String ic_logo4 = '$baseUrl/ic_logo4.png';
+  static const String ic_logo5 = '$baseUrl/ic_logo5.png';
+  static const String ic_filter_close = '$baseUrl/ic_filter_close.png';
+  static const String ic_filter1 = '$baseUrl/ic_filter1.png';
+  static const String ic_filter2 = '$baseUrl/ic_filter2.png';
+  static const String ic_filter3 = '$baseUrl/ic_filter3.png';
+  static const String ic_filter4 = '$baseUrl/ic_filter4.png';
+  static const String ic_filter5 = '$baseUrl/ic_filter5.png';
+  static const String ic_share = '$baseUrl/ic_share.png';
+  static const String ic_report1 = '$baseUrl/ic_report1.png';
+  static const String img_macedes = '$baseUrl/img_macedes.png';
 }

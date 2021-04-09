@@ -3,6 +3,7 @@ import 'package:krasscars_2/constants/constants.dart';
 import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
 import 'package:krasscars_2/helper/validate.dart';
+import 'package:krasscars_2/ui/side_bar/sidebar.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -71,8 +72,8 @@ class _SignUpState extends State<SignUp> {
                         color: AppThemes.greenColor,
                         shadowColor: AppThemes.greenColor,
                         onPressed: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => Sidebar()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Sidebar()));
                         },
                         text: Text(
                           AppString.strregister,

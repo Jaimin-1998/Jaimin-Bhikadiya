@@ -44,6 +44,8 @@ Widget inputTextField(
   );
 }
 
+
+
 Widget textField(
     BuildContext context, TextEditingController controller, String hintText, double width) {
   return Container(
@@ -54,6 +56,37 @@ Widget textField(
       controller: controller,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.only(left: 15),
+        hintText: hintText,
+        hintStyle: TextStyle(
+            color: Colors.grey[500],
+            fontSize: AppFonts.size_medium,
+            fontWeight: FontWeight.normal),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
+        ),
+        filled: true,
+        fillColor: Colors.grey[100],
+      ),
+    ),
+  );
+}
+
+Widget textField2(
+    BuildContext context, TextEditingController controller, String hintText,{ Widget suffixIcon}) {
+  return Container(
+    alignment: Alignment.center,
+    width: MediaQuery.of(context).size.width,
+//  height: 60.0,
+    child: TextField(
+      controller: controller,
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+        suffixIcon:suffixIcon==null?null: suffixIcon,
         contentPadding: EdgeInsets.only(left: 15),
         hintText: hintText,
         hintStyle: TextStyle(

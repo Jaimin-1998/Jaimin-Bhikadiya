@@ -3,6 +3,7 @@ import 'package:krasscars_2/constants/constants.dart';
 import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
 import 'package:krasscars_2/helper/validate.dart';
+import 'package:krasscars_2/ui/login/signup_screen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -139,8 +140,8 @@ class _LoginState extends State<Login> {
                         color: AppThemes.clrWhite,
                         shadowColor: AppThemes.clrGray,
                         onPressed: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => SignUp()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => SignUp()));
                         },
                         text: Text(
                           AppString.strregister,
