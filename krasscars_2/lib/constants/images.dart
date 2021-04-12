@@ -76,4 +76,5 @@ class AllImages {
   static const String ic_share = '$baseUrl/ic_share.png';
   static const String ic_report1 = '$baseUrl/ic_report1.png';
   static const String img_macedes = '$baseUrl/img_macedes.png';
+  static const String ic_car_setting = '$baseUrl/ic_car_setting.png';
 }

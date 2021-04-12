@@ -7,7 +7,7 @@ import 'package:krasscars_2/ui/home/home.dart';
 import 'package:krasscars_2/ui/manufacture/manufacture_filter.dart';
 import 'package:krasscars_2/ui/new_car/new_car.dart';
 import 'package:krasscars_2/ui/profile/profile.dart';
-import 'package:krasscars_2/ui/services_details/services%20_details.dart';
+import 'file:///F:/Flutter/Live/2nd/Jaimin-Bhikadiya/krasscars_2/lib/ui/service/services%20_details.dart';
 
 class Sidebar extends StatefulWidget {
   @override

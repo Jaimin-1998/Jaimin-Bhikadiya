@@ -142,6 +142,8 @@ class AppString {
   static const String strCancel = 'Cancel';
   static const String strOk = 'Ok';
   static const String strPleaseAddCode = 'Please Add Code';
+  static const String strCarDescription = 'Car Description';
+  static const String strInline4 = '1.5L Inline 4';
 
   static const String strSearchBrand = 'Search Brand';
   static const String strFilterAndSort = 'Filter And Sort';

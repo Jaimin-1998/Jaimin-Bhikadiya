@@ -4,6 +4,7 @@ import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
 import 'package:krasscars_2/helper/validate.dart';
 import 'package:krasscars_2/ui/login/signup_screen.dart';
+import '../side_bar/sidebar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -64,6 +65,7 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           // Navigator.push(context,
                           //     MaterialPageRoute(builder: (context) => Sidebar()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Sidebar()));
                         },
                         text: Text(
                           AppString.strSignIn,
@@ -161,4 +163,7 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+}
+
+class Sidebar {
 }

@@ -4,19 +4,38 @@ import 'package:krasscars_2/constants/constants.dart';
 import 'package:krasscars_2/custom_widget/appbar_widget.dart';
 import 'package:krasscars_2/custom_widget/button_widget.dart';
 import 'package:krasscars_2/custom_widget/text_field_widget.dart';
+import 'package:krasscars_2/helper/validate.dart';
 
-class BookTestDrive extends StatefulWidget {
+class ServiceName extends StatefulWidget {
   @override
-  _BookTestDriveState createState() => _BookTestDriveState();
+  _ServiceNameState createState() => _ServiceNameState();
 }
 
-class _BookTestDriveState extends State<BookTestDrive> {
+class _ServiceNameState extends State<ServiceName> {
   TextEditingController fullNameController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController pickUpLocationController = TextEditingController();
   TextEditingController dropLocationController = TextEditingController();
   TextEditingController datePreferredController = TextEditingController();
   TextEditingController timePreferredController = TextEditingController();
+  bool isSwitched = true;
+  var textValue = 'Switch is ON';
+
+  void toggleSwitch(bool value) {
+    if (isSwitched == false) {
+      setState(() {
+        isSwitched = true;
+        textValue = 'Switch Button is ON';
+      });
+      print('Switch Button is ON');
+    } else {
+      setState(() {
+        isSwitched = false;
+        textValue = 'Switch Button is OFF';
+      });
+      print('Switch Button is OFF');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +48,26 @@ class _BookTestDriveState extends State<BookTestDrive> {
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20))),
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-        child: ButtonWidget(
-          width: MediaQuery.of(context).size.width,
-          color: AppThemes.greenColor,
-          text: Text(
-            AppString.strAddCar,
-            style: TextStyle(
-                color: AppThemes.clrWhite,
-                fontWeight: FontWeight.bold,
-                fontSize: AppFonts.size_large),
-          ),
-          onPressed: () {
-            // Navigator.push(context, MaterialPageRoute(builder: (context) => Authenticate()));
-          },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('\$ 600', style: TextStyle(color: AppThemes.clrBlack, fontFamily: AppFonts.PoppinsBold, fontSize: AppFonts.size_large)),
+
+      ButtonWidget(
+              width: MediaQuery.of(context).size.width * 0.55,
+              color: AppThemes.greenColor,
+              text: Text(
+                AppString.strBookService,
+                style: TextStyle(
+                    color: AppThemes.clrWhite,
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFonts.size_large),
+              ),
+              onPressed: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => Authenticate()));
+              },
+            ),
+          ],
         ),
       ),
       body: ListView(
@@ -53,7 +79,7 @@ class _BookTestDriveState extends State<BookTestDrive> {
             children: [
               Stack(
                 children: [
-                    AppBarWidget1(context, AppString.strBookTestDrive, false),
+                  AppBarWidget1(context, AppString.strServiceName, false),
                   Padding(
                     padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.width * 0.30,
@@ -61,6 +87,7 @@ class _BookTestDriveState extends State<BookTestDrive> {
                         left: 20,
                         right: 20),
                     child: Card(
+                      elevation: 10,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                       child: Padding(
@@ -91,15 +118,16 @@ class _BookTestDriveState extends State<BookTestDrive> {
                                       Container(
                                         height:
                                             MediaQuery.of(context).size.width *
+                                                0.32,
+                                        width:
+                                            MediaQuery.of(context).size.width *
                                                 0.37,
-                                        width: MediaQuery.of(context).size.width *
-                                            0.32,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(15),
                                             image: DecorationImage(
-                                                image:
-                                                    AssetImage(AllImages.ic_cae2),
+                                                image: AssetImage(
+                                                    AllImages.ic_cae2),
                                                 fit: BoxFit.cover)),
                                       ),
                                       Padding(
@@ -120,8 +148,8 @@ class _BookTestDriveState extends State<BookTestDrive> {
                                               AppString.strWhite,
                                               style: TextStyle(
                                                   color: AppThemes.clrBlack,
-                                                  fontSize:
-                                                      AppFonts.size_small_medium,
+                                                  fontSize: AppFonts
+                                                      .size_small_medium,
                                                   fontFamily:
                                                       AppFonts.PoppinsRegular),
                                             ),
@@ -138,7 +166,7 @@ class _BookTestDriveState extends State<BookTestDrive> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              AppString.strManufactures,
+                                              AppString.strMake,
                                               style: TextStyle(
                                                   color: AppThemes
                                                       .clrgrayButtonText,
@@ -158,9 +186,10 @@ class _BookTestDriveState extends State<BookTestDrive> {
                                             )
                                           ],
                                         ),
+                                        SizedBox(height: 10),
                                         Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               AppString.strModel,
@@ -168,97 +197,114 @@ class _BookTestDriveState extends State<BookTestDrive> {
                                                   color: AppThemes
                                                       .clrgrayButtonText,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             ),
                                             Text(
-                                              AppString.strBMWX3Four,
+                                              AppString.strM3330i,
                                               style: TextStyle(
                                                   color: AppThemes.clrBlack,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             )
                                           ],
                                         ),
+                                        SizedBox(height: 10),
                                         Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              AppString.strBuildType,
+                                              AppString.strYear,
                                               style: TextStyle(
                                                   color: AppThemes
                                                       .clrgrayButtonText,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             ),
                                             Text(
-                                              AppString.strMiniTruck,
+                                              AppString.str2010,
                                               style: TextStyle(
                                                   color: AppThemes.clrBlack,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             )
                                           ],
                                         ),
+                                        SizedBox(height: 10),
                                         Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              AppString.strTransmission,
+                                              AppString.strNickName,
                                               style: TextStyle(
                                                   color: AppThemes
                                                       .clrgrayButtonText,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             ),
                                             Text(
-                                              AppString.strAutomatic,
+                                              AppString.strTuby,
                                               style: TextStyle(
                                                   color: AppThemes.clrBlack,
                                                   fontFamily:
-                                                  AppFonts.PoppinsRegular,
+                                                      AppFonts.PoppinsRegular,
                                                   fontSize: AppFonts
                                                       .size_small_medium),
                                             )
                                           ],
                                         ),
-                                        Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              AppString.strFuelType,
-                                              style: TextStyle(
-                                                  color: AppThemes
-                                                      .clrgrayButtonText,
-                                                  fontFamily:
-                                                  AppFonts.PoppinsRegular,
-                                                  fontSize: AppFonts
-                                                      .size_small_medium),
-                                            ),
-                                            Text(
-                                              AppString.strAutomatic,
-                                              style: TextStyle(
-                                                  color: AppThemes.clrBlack,
-                                                  fontFamily:
-                                                  AppFonts.PoppinsRegular,
-                                                  fontSize: AppFonts
-                                                      .size_small_medium),
-                                            )
-                                          ],
-                                        )
                                       ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  AppString.strPsAdMotors,
+                                  style: TextStyle(
+                                      fontSize: AppFonts.size_medium,
+                                      fontFamily: AppFonts.PoppinsSemiBold,
+                                      color: AppThemes.clrgrayButtonText),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 25,
+                                    width: 25,
+                                    child: Image.asset(
+                                      AllImages.ic_location,
+                                      color: AppThemes.clrBlack,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Flexible(
+                                    child: Text(
+                                      AppString.strItemLocationString,
+                                      style: TextStyle(
+                                          color: AppThemes.clrgrayButtonText,
+                                          fontFamily: AppFonts.PoppinsRegular,
+                                          fontSize: AppFonts.size_small_medium),
                                     ),
                                   )
                                 ],
@@ -274,34 +320,87 @@ class _BookTestDriveState extends State<BookTestDrive> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, fullNameController, 'Full Name', prefixIcon: Image.asset(AllImages.ic_user, color: AppThemes.clrGray)),
+            padding: EdgeInsets.only(right: 40, left: 40, bottom: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  AppString.strPickUpandDrop,
+                  style: TextStyle(
+                      color: AppThemes.clrBlack,
+                      fontSize: AppFonts.size_medium),
+                ),
+                Transform.scale(
+                    scale: 2,
+                    child: Switch(
+                      onChanged: toggleSwitch,
+                      value: isSwitched,
+                      activeColor: AppThemes.greenColor,
+                      activeTrackColor: Colors.grey[100],
+                      inactiveThumbColor: Colors.grey[200],
+                      inactiveTrackColor: Colors.grey[100],
+                    )),
+                Text('\$ 30',
+                    style: TextStyle(
+                        fontSize: AppFonts.size_medium_large,
+                        fontFamily: AppFonts.PoppinsBold,
+                        color: AppThemes.clrBlack))
+              ],
+            ),
           ),
-          SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, addressController, 'Address', prefixIcon: Image.asset(AllImages.ic_location, color: AppThemes.clrGray)),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+            child: inputTextField(fullNameController, validateName,
+                AppString.strFullName, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_manager,
+                  color: AppThemes.clrGray,
+                )),
           ),
-          SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, pickUpLocationController, 'Pick up Location', prefixIcon: Image.asset(AllImages.ic_location, color: AppThemes.clrGray)),
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: inputTextField(addressController, validateAddress,
+                AppString.strAddress, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_location,
+                  color: AppThemes.clrGray,
+                )),
           ),
-          SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, dropLocationController, 'Drop Location', prefixIcon: Image.asset(AllImages.ic_user, color: AppThemes.clrGray)),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+            child: inputTextField(pickUpLocationController, validateAddress,
+                AppString.strPickUpLocation, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_location,
+                  color: AppThemes.clrGray,
+                )),
           ),
-          SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, datePreferredController, 'Date Preferred', prefixIcon: Image.asset(AllImages.ic_date)),
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: inputTextField(dropLocationController, validateAddress,
+                AppString.strDropLocation, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_location,
+                  color: AppThemes.clrGray,
+                )),
           ),
-          SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: textField2(context, timePreferredController, 'Time Preferred', prefixIcon: Image.asset(AllImages.ic_filter1, color: AppThemes.clrGray)),
-          )
+            padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+            child: inputTextField(datePreferredController, validateName,
+                AppString.strDatePreferred, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_date,
+                )),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: inputTextField(timePreferredController, validateName,
+                AppString.strTimePreferred, TextInputType.text, null, false,
+                prefixIcon: Image.asset(
+                  AllImages.ic_filter1,
+                  color: AppThemes.clrGray,
+                )),
+          ),
         ],
       ),
     );

@@ -5,6 +5,7 @@ class AppThemes {
   static const Color primaryColor = Color(0xffF0EB16);
 
   static const Color greenColor = Color(0xff119A48);
+  static const Color greenLightColor = Color(0xffa2f5c3);
   static const Color clrFontBlue = Color(0xff152843);
   static const Color clrgrayButtonBackground = Color(0xffF5F7F9);
   static const Color clrgrayButtonText = Color(0xff707070);

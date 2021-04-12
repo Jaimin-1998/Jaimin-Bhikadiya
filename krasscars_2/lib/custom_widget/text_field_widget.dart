@@ -77,7 +77,7 @@ Widget textField(
 }
 
 Widget textField2(
-    BuildContext context, TextEditingController controller, String hintText,{ Widget suffixIcon}) {
+    BuildContext context, TextEditingController controller, String hintText,{ Widget suffixIcon, Widget prefixIcon}) {
   return Container(
     alignment: Alignment.center,
     width: MediaQuery.of(context).size.width,
@@ -86,6 +86,7 @@ Widget textField2(
       controller: controller,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon==null?null:prefixIcon,
         suffixIcon:suffixIcon==null?null: suffixIcon,
         contentPadding: EdgeInsets.only(left: 15),
         hintText: hintText,

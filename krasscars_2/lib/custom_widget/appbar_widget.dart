@@ -110,9 +110,9 @@ Widget AppBarWidget2(BuildContext context,String title,bool iconFilter,bool isFi
 }
 
 // ignore: non_constant_identifier_names
-Widget AppBarWithNotificationWidget(BuildContext context,String title){
-  return   Container(
-    height: MediaQuery.of(context).size.width * 0.45,
+Widget AppBarWithNotificationWidget(BuildContext context,String title1,String title, bool isCarIcon,bool isTitle,{double height }){
+  return Container(
+    height: height==null? MediaQuery.of(context).size.width * 0.55:height,
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
         color: AppThemes.clrPrimary,
@@ -125,24 +125,52 @@ Widget AppBarWithNotificationWidget(BuildContext context,String title){
         children: [
           Align(
             alignment: Alignment.topLeft,
-            child:   GestureDetector(
-              onTap: (){
-                SimpleHiddenDrawerController.of(context).toggle();
-              },
-              child: Image.asset(
-                AllImages.ic_drawer,
-                height: 54,
-                width: 54,
-              ),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    SimpleHiddenDrawerController.of(context).toggle();
+                  },
+                  child: Image.asset(
+                    AllImages.ic_drawer,
+                    height: 54,
+                    width: 54,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+//SimpleHiddenDrawerController.of(context).toggle();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Container(
+                      height: 27,
+                      width: 27,
+                      child: Image.asset(
+                        AllImages.ic_location,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  title1,
+                  style: TextStyle(
+                      color: AppThemes.clrBlack,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AppFonts.PoppinsBold,
+                      fontSize: AppFonts.size_medium),
+                ),
+              ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 60,bottom: 0),
+            padding: const EdgeInsets.only(right: 50,bottom: 0),
             child: Align(
               alignment: Alignment.topRight,
               child: GestureDetector(
                 onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => SellerEdit()));
+// Navigator.push(context, MaterialPageRoute(builder: (context) => SellerEdit()));
                 },
                 child: Container(
                   height: 45,
@@ -153,7 +181,7 @@ Widget AppBarWithNotificationWidget(BuildContext context,String title){
                           color: AppThemes.clrBlack, width: 3),
                       image: DecorationImage(
                           image: AssetImage(
-                              AllImages.img_user_profile),
+                              AllImages.img_user_profile1),
                           fit: BoxFit.cover)),
                 ),
               ),
@@ -161,30 +189,47 @@ Widget AppBarWithNotificationWidget(BuildContext context,String title){
           ),
           Align(
             alignment: Alignment.topRight,
-            child: Image.asset(
-              AllImages.ic_notification,
-              height: 40,
-              width: 40,
-              fit: BoxFit.cover,
+            child: Container(
+              height: 35,
+              width: 35,
+              child: Image.asset(
+                AllImages.ic_notification,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          Align(
+
+          isCarIcon==true? Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.width *  0.12,left: MediaQuery.of(context).size.width * 0.12),
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: AppThemes.clrBlack,
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(AllImages.ic_car_setting),
+                  )),
+            ),
+          ):Container(),
+          isTitle==true? Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding:  EdgeInsets.only(bottom: MediaQuery.of(context).size.width *0.10),
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.width *0.15),
               child: Text(
                 title,
                 style: TextStyle(
                     color: AppThemes.clrBlack,
                     fontWeight: FontWeight.bold,
+                    fontFamily: AppFonts.PoppinsBold,
                     fontSize: AppFonts.size_triple_extra_large),
               ),
             ),
-          ),
+          ):Container(),
         ],
       ),
     ),
-
   );
 }
 
